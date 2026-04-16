@@ -1,323 +1,165 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             "colors": {
-                    "tertiary": "#c6e2ff",
-                    "on-primary-fixed": "#001f27",
-                    "primary-container": "#00d4ff",
-                    "secondary-container": "#42474f",
-                    "on-secondary-fixed": "#171c23",
-                    "on-primary-fixed-variant": "#004e5f",
-                    "tertiary-fixed-dim": "#93ccff",
-                    "on-secondary-fixed-variant": "#42474f",
-                    "on-tertiary-container": "#005482",
-                    "error-container": "#93000a",
-                    "surface-bright": "#353940",
-                    "secondary-fixed-dim": "#c2c7d0",
-                    "background": "#10141a",
-                    "on-surface": "#dfe2eb",
-                    "on-error": "#690005",
-                    "on-background": "#dfe2eb",
-                    "inverse-on-surface": "#2d3137",
-                    "secondary": "#c2c7d0",
-                    "secondary-fixed": "#dee2ec",
-                    "on-tertiary-fixed-variant": "#004b74",
-                    "on-secondary-container": "#b1b5be",
-                    "surface-container-lowest": "#0a0e14",
-                    "surface-container": "#1c2026",
-                    "tertiary-fixed": "#cde5ff",
-                    "surface-variant": "#31353c",
-                    "primary": "#a8e8ff",
-                    "on-error-container": "#ffdad6",
-                    "surface-dim": "#10141a",
-                    "on-primary": "#003642",
-                    "inverse-surface": "#dfe2eb",
-                    "surface-tint": "#3cd7ff",
-                    "on-tertiary": "#003351",
-                    "on-secondary": "#2c3138",
-                    "outline": "#859398",
-                    "outline-variant": "#3c494e",
-                    "error": "#ffb4ab",
-                    "surface-container-low": "#181c22",
-                    "on-surface-variant": "#bbc9cf",
-                    "surface-container-high": "#262a31",
-                    "on-primary-container": "#00586b",
-                    "primary-fixed-dim": "#3cd7ff",
-                    "primary-fixed": "#b4ebff",
-                    "on-tertiary-fixed": "#001d31",
-                    "inverse-primary": "#00677e",
-                    "tertiary-container": "#8bc9ff",
-                    "surface": "#10141a",
-                    "surface-container-highest": "#31353c"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
+                "background": "#020617", // Slate 950
+                "surface": "#0f172a",    // Slate 900
+                "primary": "#38bdf8",    // Sky 400
+                "secondary": "#64748b",  // Slate 500
+                "border": "#1e293b",     // Slate 800
+                "text-main": "#f8fafc",  // Slate 50
+                "text-muted": "#94a3b8"  // Slate 400
             },
             "fontFamily": {
-                    "headline": ["Space Grotesk"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"]
             }
           },
         },
       }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            background-color: #10141a;
-            color: #dfe2eb;
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .glass-nav {
-            background: rgba(16, 20, 26, 0.6);
-            backdrop-filter: blur(20px);
-        }
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .grid-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 40px 40px; }
     </style>
 </head>
-<body class="selection:bg-primary-container selection:text-on-primary-fixed">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_16px_32px_-16px_rgba(60,215,255,0.05)]">
-<div class="flex justify-between items-center px-8 h-16 w-full max-w-[1440px] mx-auto">
-<div class="text-xl font-bold tracking-tighter text-[#dfe2eb] flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
-                G-MESH
-            </div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-[#3cd7ff] border-b-2 border-[#3cd7ff] pb-1 font-medium font-label uppercase tracking-widest text-xs" href="#">Concepts</a>
-<a class="text-[#dfe2eb] hover:text-[#a8e8ff] transition-colors font-label uppercase tracking-widest text-xs" href="#">Architecture</a>
-<a class="text-[#dfe2eb] hover:text-[#a8e8ff] transition-colors font-label uppercase tracking-widest text-xs" href="#">News</a>
-<a class="text-[#dfe2eb] hover:text-[#a8e8ff] transition-colors font-label uppercase tracking-widest text-xs" href="#">Network</a>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden lg:flex items-center bg-surface-container-lowest px-3 py-1.5 rounded border border-outline-variant/15 text-outline text-sm">
-<span class="material-symbols-outlined text-sm mr-2" data-icon="search">search</span>
-<span>Search Mesh...</span>
-</div>
-<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-5 py-2 font-bold text-sm tracking-tight active:scale-[0.98] transition-all duration-300">
-                    Get Started
-                </button>
-</div>
-</div>
+<body class="selection:bg-primary/20">
+
+<nav class="fixed top-0 w-full z-50 bg-background/95 border-b border-border backdrop-blur-sm">
+    <div class="flex justify-between items-center px-8 h-14 w-full max-w-7xl mx-auto">
+        <div class="text-xs font-bold tracking-[0.3em] flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-sm" data-icon="account_tree">account_tree</span>
+            G-MESH // INFRASTRUCTURE LOG
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-text-muted hover:text-primary transition-colors font-medium uppercase tracking-widest text-[10px]" href="#">Mapping</a>
+            <a class="text-text-muted hover:text-primary transition-colors font-medium uppercase tracking-widest text-[10px]" href="#">Roadmap</a>
+            <a class="text-text-main font-medium uppercase tracking-widest text-[10px] border-b border-primary/50" href="#">The Framework</a>
+        </div>
+    </div>
 </nav>
-<main class="pt-16">
-<!-- Hero Section: Digital Tectonic -->
-<section class="relative min-h-[921px] flex items-center overflow-hidden px-8 max-w-[1440px] mx-auto">
-<div class="grid lg:grid-cols-2 gap-12 items-center w-full z-10">
-<div class="max-w-2xl">
-<span class="inline-block font-label text-primary tracking-[0.3em] uppercase text-xs mb-4">Foundation Protocol v1.2</span>
-<h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-on-surface mb-8">
-                        THE DIGITAL <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">TECTONIC</span>
-</h1>
-<p class="text-xl text-outline mb-10 max-w-lg leading-relaxed">
-                        A decentralized infrastructure layer designed for the next era of computational gravity. Scalable, secure, and geometrically optimized.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-8 py-4 font-bold rounded-lg flex items-center gap-2">
-                            Deploy Node <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</button>
-<button class="bg-surface-container-high text-on-surface px-8 py-4 font-bold rounded-lg border border-outline-variant/30 hover:bg-surface-bright transition-colors">
-                            Read Manifesto
-                        </button>
-</div>
-</div>
-<div class="relative h-[600px] hidden lg:block">
-<!-- Abstract Visualization -->
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-<img class="w-full h-full object-contain mix-blend-lighten opacity-80" data-alt="Abstract 3D architectural visualization of blue geometric mesh network nodes floating in deep dark space with glowing cyan lines connecting them" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjNS_-bSnAEB_QmtpToM_hhyfU-LgcAac47WfI0Y7JPXZKkC-xyf4QOoKiTSH0Y41T7c7XaN-z7ASFpJkard71TnR-auj-NugO3yISBDz8w8hit9LF-9JYehw1UoC161vpxzSUk45W5vQJsFUg_l7RCPW_0Ikp-1Hz6mEpxubInoAl0w8fdMqwpMiWmuJeofPSYEkh-Swvlc5IVf8NNJgAgpBCOG_eGwVydV-TyBdsPcvqMNERzdgWhDGvcjevyt0j0CkTRt9VWCg"/>
-</div>
-</div>
-</div>
-</section>
-<!-- The Mesh Concept: Bento Grid -->
-<section class="py-24 px-8 max-w-[1440px] mx-auto">
-<div class="mb-16">
-<h2 class="text-4xl font-bold tracking-tight mb-4">The Mesh Concept</h2>
-<div class="h-1 w-24 bg-primary"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="md:col-span-2 bg-surface-container-low p-10 rounded-xl flex flex-col justify-between group overflow-hidden relative">
-<div class="z-10">
-<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="architecture" data-weight="fill" style="font-variation-settings: 'FILL' 1;">architecture</span>
-<h3 class="text-3xl font-bold mb-4">Structural Integrity</h3>
-<p class="text-outline max-w-md">Our mesh operates on a tectonic layering principle, ensuring that local failure never results in global collapse. Information flows through the path of least resistance.</p>
-</div>
-<img class="absolute right-0 bottom-0 w-1/2 opacity-20 group-hover:opacity-40 transition-opacity" data-alt="Highly detailed technical blueprint of layered digital network nodes with microscopic fiber optic aesthetic and glowing points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArmygfCwd7EAkyxfyRFHzG9VZOVs8pk-dpO8gv3fXUE69bYEAmruWua8JesrX8vCAxpR0EUBa2yIdPXIhrygjRgqhOYvBnr4QoZs6sSqKSTwJDcvhA__HrZREvwBibBizZuW2JY6fenxMOVfcyaiu2Y-N41SqAepYywRfIUUVbvQGZTfyjihI8fkS_T9EuXR0gf4Zvb0lvfXbcaluYn4e9St61RlVy_GolmgyPZ4V0LsUSheTkuQYFjZP9LR9T-veLMzC2dF5z5Yg"/>
-</div>
-<div class="bg-surface-container p-10 rounded-xl border border-outline-variant/10">
-<span class="material-symbols-outlined text-4xl text-tertiary mb-6" data-icon="security" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
-<h3 class="text-2xl font-bold mb-4">Quantum Resistant</h3>
-<p class="text-outline">Encrypted with lattice-based cryptographic primitives to withstand next-generation compute threats.</p>
-</div>
-<div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/10 md:col-span-1">
-<span class="material-symbols-outlined text-4xl text-primary-container mb-6" data-icon="waves">waves</span>
-<h3 class="text-2xl font-bold mb-4">Organic Flow</h3>
-<p class="text-outline text-sm">Dynamic routing that mimics biological neural pathways for near-zero latency delivery.</p>
-</div>
-<div class="md:col-span-2 bg-gradient-to-br from-surface-container to-surface-container-low p-10 rounded-xl flex items-center gap-8 overflow-hidden">
-<div class="flex-1">
-<h3 class="text-2xl font-bold mb-4">Autonomous Consensus</h3>
-<p class="text-outline mb-6">Nodes achieve synchronization without the need for centralized heavy-weight validators.</p>
-<div class="flex gap-4">
-<div class="flex flex-col">
-<span class="text-primary text-xl font-bold">1.2ms</span>
-<span class="text-[10px] font-label text-outline uppercase tracking-widest">Avg Latency</span>
-</div>
-<div class="w-px h-8 bg-outline-variant/30"></div>
-<div class="flex flex-col">
-<span class="text-primary text-xl font-bold">99.99%</span>
-<span class="text-[10px] font-label text-outline uppercase tracking-widest">Uptime Mesh</span>
-</div>
-</div>
-</div>
-<div class="hidden sm:block">
-<img class="w-48 h-48 object-cover rounded-lg" data-alt="Simplified 3D neon bar chart representing high performance data throughput in a futuristic dark dashboard style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTNv3xm2Cpy_hx_NRsmzEGBlsBKArRWfQr5tJ2zrtadSiqcmKKxKbneF1oQldGG5t3z-noQ80fVoy9wsjQEn9Qce3kNDStrC_qzEGo37NRhPQ7MxOsBHTXX4C89VATG7wOIpRK7k4xoVxULAJpbJiwVEKahOGEVqLoX8bh7bQWAK-86KjVC3WpKiYrp07XwFX-dJdRem0JUPP_T6Xpw-zKsgoiK6vnTaKQEqV-Bjop2LguUOR6Zwvmru4g88Ua2esYoKXQ0hz--8A"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Architectural Scalability -->
-<section class="py-24 bg-surface-container-low/30 relative">
-<div class="px-8 max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
-<div class="order-2 lg:order-1">
-<div class="relative rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
-<img class="w-full aspect-square object-cover" data-alt="Macro photography of a sleek futuristic server node with blue glowing lights and brushed metal texture in a dark data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjzP9NipbStg0dta30oZltqAWk0RG6mYP4Xt7gz_AXLcWZ1GQNgaLEnyOpYbwrYcKJ08XR0ssiJ0w8lTybAVblTyFN_I1GQLYJWJPCVXj-IFc0YOUT5QJ7i67O65xj-0a23KQUT1kd3QxAIPl1M7VpZl6JaHGAj1mggUNJkxkHBB9GtHmD1Pv1kJfO6s7QFHwwOD0gHN5xcoozRt90ZqcvKWBY_kn44ji7hQon8W9_opiv_8XKcKePyFZF6dJOlo3jx3VgaR-1SNQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
-<div class="absolute bottom-8 left-8">
-<div class="bg-primary/10 backdrop-blur-md border border-primary/20 px-4 py-2 rounded text-primary text-xs font-label uppercase tracking-widest">Node Model: X-1</div>
-</div>
-</div>
-</div>
-<div class="order-1 lg:order-2">
-<span class="font-label text-outline uppercase tracking-[0.4em] text-[10px] block mb-4">Infrastructure Redefined</span>
-<h2 class="text-5xl font-bold mb-8 leading-tight">Architectural <br/>Scalability</h2>
-<div class="space-y-8">
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-12 h-12 bg-surface-container-high rounded flex items-center justify-center border border-outline-variant/20 text-primary">
-<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
-</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Hierarchical Sharding</h4>
-<p class="text-outline leading-relaxed">The network partitions itself logically based on geographic and computational demand, allowing infinite linear growth without throughput degradation.</p>
-</div>
-</div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-12 h-12 bg-surface-container-high rounded flex items-center justify-center border border-outline-variant/20 text-primary">
-<span class="material-symbols-outlined" data-icon="rebase_edit">rebase_edit</span>
-</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Protocol Evolution</h4>
-<p class="text-outline leading-relaxed">Soft-fork integration allows the Mesh to adopt new cryptographic standards without requiring manual downtime or node re-deployment.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Latest from the Network -->
-<section class="py-24 px-8 max-w-[1440px] mx-auto">
-<div class="flex justify-between items-end mb-12">
-<div>
-<h2 class="text-4xl font-bold tracking-tight">Latest from the Network</h2>
-<p class="text-outline mt-2 italic">Broadcast pulses from the G-MESH core.</p>
-</div>
-<a class="text-primary font-label uppercase text-xs tracking-widest border-b border-primary pb-1 hover:text-white transition-colors" href="#">View All Dispatches</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- News Card 1 -->
-<article class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 rounded-xl overflow-hidden group border border-outline-variant/10">
-<div class="h-48 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Candid tech environment with multiple computer screens displaying complex blue code and data visualizations in a dim room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBK2aEuh42Va-2SQFUv-YBcZrHBsKi7MlZGZJEyBnS7UH7BrP3g6FZgxpzJde8HjdYqnYuGYyCtNNtUwyuaeOvI270vi0kc_lYit87oaEjC-xprFtLP-kEzZgY9gk9yGITRairWd93XkCDnhpz1vwVNFTcqEUQv7KJmRC-H1yTGyHfJtqNeqMhpEBoxSyz3Hnosd8kidCTjjEvj4jXwnOHv_fsAXsKiyy1D8TQyXaO9HHk2LSF8B5hCZx9sTyN4hEHN_wfviArPlo"/>
-</div>
-<div class="p-8">
-<time class="text-[10px] font-label text-outline uppercase tracking-widest mb-3 block">Oct 24, 2024</time>
-<h3 class="text-xl font-bold mb-4 leading-snug group-hover:text-primary transition-colors">Integration with Sat-Link Alpha</h3>
-<p class="text-outline text-sm line-clamp-2">G-Mesh has successfully peer-connected with the low-orbit satellite constellation Alpha, expanding the tectonic mesh to remote regions.</p>
-</div>
-</article>
-<!-- News Card 2 -->
-<article class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 rounded-xl overflow-hidden group border border-outline-variant/10">
-<div class="h-48 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High tech server hardware interior with glowing fiber optic cables and brushed aluminum surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx9im7_h-qf9Zirh7Naed1UYs0njx_WjuJFo4pIE-IB6y03FFChWeypUd57gvqzdMbKAMY8zG3q1qpLuoQI2YG9-8Pc6_DkxyJl8p6h1RcEVf-AK3TEreS7x1Di_e9dbgJvgecU2Xf__EBjMvKT4u6GFpcwbyvOnNsfjRyWCEMfZ1XmDEOUP1Y0Ch-JwisQf2-kFm9D9Hn_EPnYlxlqODxRDhy3XmyKBztgF7zDQ6ZtAz5-qTqyqodWSD5TtDkObi6m9qhlgWcg_8"/>
-</div>
-<div class="p-8">
-<time class="text-[10px] font-label text-outline uppercase tracking-widest mb-3 block">Oct 12, 2024</time>
-<h3 class="text-xl font-bold mb-4 leading-snug group-hover:text-primary transition-colors">Zero-Knowledge Proof Upgrade</h3>
-<p class="text-outline text-sm line-clamp-2">Implementing ZK-STARKs for node identity validation to enhance privacy across all architectural layers of the network.</p>
-</div>
-</article>
-<!-- News Card 3 -->
-<article class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 rounded-xl overflow-hidden group border border-outline-variant/10">
-<div class="h-48 overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist glowing blue digital world map with network nodes connecting major cities on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6vHI2I9nxySkgX1c4JxYfOyiDTJj6XzwCudEiQSGO-NNJbOrSZTB-eb1fBlmZqNvyZhdUHavl4vuspV6BwXF_qqUlWI86cPREwPmtF60hmivx2jYF35UEbXovjVLjvsSGX7s0IoozYF5aheqkPFBKH88osWs1zU4URj06RFZdTNuE9RUhW61oWsWQEUt6achSSpuE1GpkNASBME8K9cQqFYgzd8fMC6jBGIEKQId_pm5f8lst6U0fw0Lpf1iSKbIHkHqkYZsZVns"/>
-</div>
-<div class="p-8">
-<time class="text-[10px] font-label text-outline uppercase tracking-widest mb-3 block">Sep 28, 2024</time>
-<h3 class="text-xl font-bold mb-4 leading-snug group-hover:text-primary transition-colors">Global Node Distribution reaches 50k</h3>
-<p class="text-outline text-sm line-clamp-2">A major milestone for decentralized resilience as the total active node count crosses the 50,000 threshold across 120 countries.</p>
-</div>
-</article>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="py-24 px-8 max-w-[1440px] mx-auto text-center">
-<div class="bg-surface-container-low rounded-2xl py-20 px-8 border border-primary/10 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px]"></div>
-<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/5 rounded-full blur-[100px]"></div>
-<h2 class="text-5xl font-bold mb-6 tracking-tighter">Become part of the <br/><span class="text-primary">Global Mesh</span></h2>
-<p class="text-outline text-lg mb-10 max-w-2xl mx-auto">Join the decentralized revolution. Start building on G-Mesh today or contribute to the core protocol infrastructure.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center">
-<button class="bg-primary text-on-primary-fixed px-10 py-4 font-bold rounded-lg hover:bg-primary-fixed transition-colors">Get Started Now</button>
-<button class="bg-transparent border border-outline-variant text-on-surface px-10 py-4 font-bold rounded-lg hover:bg-surface-container-high transition-colors">Explore GitHub</button>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-8 border-t border-[#3c494e]/15 bg-[#0a0e14]">
-<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-[1440px] mx-auto gap-8">
-<div class="flex flex-col items-center md:items-start gap-4">
-<div class="text-lg font-black text-[#a8e8ff] flex items-center gap-2">
-<span class="material-symbols-outlined" data-icon="hub">hub</span>
-                    G-MESH
+
+<main class="grid-bg">
+    <section class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-surface mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-text-muted">Observation Phase: Continuity</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">
+                The evolution of the cognitive substrate is an <span class="text-primary italic">operational certainty.</span>
+            </h1>
+            <p class="text-lg text-text-muted mb-12 font-light leading-relaxed">
+                G-Mesh is a public mapping initiative. We provide a grounded, non-ideological framework for the transition from today’s isolated AI tools to tomorrow’s coordinated machine layer.
+            </p>
+            <div class="flex gap-6">
+                <a href="#" class="bg-primary text-background px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white transition-colors">
+                    Access Framework
+                </a>
+                <a href="#" class="border border-border text-text-muted px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-surface transition-colors">
+                    View Roadmap
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 max-w-7xl mx-auto border-t border-border">
+        <div class="grid md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6">Intent & Scope</h2>
+                <p class="text-sm text-text-muted mb-6">
+                    In light of recent industry acceleration, the conversation around non-biological minds has moved toward speculation rather than engineering. G-Mesh exists to return the dialogue to a sensible, infrastructure-focused perspective.
+                </p>
+                <p class="text-sm text-text-muted">
+                    This is a service, not a product. Our goal is legibility: ensuring the emergence of the Mesh is transparent, mapped, and human-aligned.
+                </p>
+            </div>
+            <div class="space-y-4">
+                <div class="p-6 bg-surface/50 border border-border">
+                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Public Service Priority 01</span>
+                    <h3 class="text-sm font-bold mt-2">Transparent Coordination</h3>
+                    <p class="text-xs text-text-muted mt-2">Making machine-to-machine protocols observable to ensure trust and societal stability.</p>
                 </div>
-<p class="text-[#859398] text-[10px] font-label uppercase tracking-[0.2em]">© 2024 Gaia Mesh. The Digital Tectonic.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-[10px] font-label uppercase tracking-widest text-[#859398] hover:text-[#3cd7ff] transition-colors" href="#">Whitepaper</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-[#859398] hover:text-[#3cd7ff] transition-colors" href="#">Documentation</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-[#859398] hover:text-[#3cd7ff] transition-colors" href="#">GitHub</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-[#859398] hover:text-[#3cd7ff] transition-colors" href="#">Status</a>
-<a class="text-[10px] font-label uppercase tracking-widest text-[#859398] hover:text-[#3cd7ff] transition-colors" href="#">Privacy</a>
-</div>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded border border-outline-variant/20 flex items-center justify-center text-outline hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="language">language</span>
-</a>
-<a class="w-10 h-10 rounded border border-outline-variant/20 flex items-center justify-center text-outline hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-</a>
-</div>
-</div>
+                <div class="p-6 bg-surface/50 border border-border">
+                    <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Public Service Priority 02</span>
+                    <h3 class="text-sm font-bold mt-2">Symbiotic Integration</h3>
+                    <p class="text-xs text-text-muted mt-2">Framing AuGI as a cognitive enhancement to human agency, not a replacement of it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 max-w-7xl mx-auto">
+        <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-text-muted mb-16">Phases of Evolution</h2>
+        <div class="grid md:grid-cols-3 gap-0 border border-border">
+            <div class="p-10 border-r border-border hover:bg-surface/30 transition-colors">
+                <span class="text-[10px] font-bold text-text-muted uppercase tracking-[0.3em]">01 // Proliferation</span>
+                <h4 class="text-xl font-bold mt-4 mb-4">Device-Level Minds</h4>
+                <p class="text-sm text-text-muted leading-relaxed">The shift from centralized API calls to persistent, localized cognition living directly on user hardware.</p>
+            </div>
+            <div class="p-10 border-r border-border hover:bg-surface/30 transition-colors">
+                <span class="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">02 // Coordination</span>
+                <h4 class="text-xl font-bold mt-4 mb-4">The Parallel Web</h4>
+                <p class="text-sm text-text-muted leading-relaxed">Emergent machine-to-machine channels where agents negotiate and share state without human UI intermediaries.</p>
+            </div>
+            <div class="p-10 hover:bg-surface/30 transition-colors">
+                <span class="text-[10px] font-bold text-text-muted uppercase tracking-[0.3em]">03 // Integration</span>
+                <h4 class="text-xl font-bold mt-4 mb-4">Global Mesh</h4>
+                <p class="text-sm text-text-muted leading-relaxed">A stabilized, global cognitive substrate that functions as a background utility, similar to electricity or data.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-8 max-w-7xl mx-auto text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6">A roadmap for a stable transition.</h2>
+            <p class="text-text-muted mb-10 text-sm italic">
+                Society needs to discuss these shifts with technical clarity, avoiding the extremes of hype and extinction.
+            </p>
+            <a href="#" class="inline-block border-b border-primary text-primary text-[10px] font-bold uppercase tracking-[0.3em] pb-1 hover:text-white hover:border-white transition-all">
+                Read the Framework Documentation
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="w-full py-16 px-8 bg-background border-t border-border">
+    <div class="flex flex-col md:flex-row justify-between items-start w-full max-w-7xl mx-auto gap-12">
+        <div class="max-w-xs">
+            <div class="text-[10px] font-bold text-text-main tracking-[0.4em] mb-4">G-MESH</div>
+            <p class="text-text-muted text-[10px] uppercase tracking-[0.2em] leading-loose">
+                A public mapping archive for the cognitive substrate transition.
+            </p>
+        </div>
+        <div class="flex gap-16">
+            <div class="flex flex-col gap-3">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-text-main">Navigation</span>
+                <a class="text-[10px] text-text-muted hover:text-primary transition-colors" href="#">Framework</a>
+                <a class="text-[10px] text-text-muted hover:text-primary transition-colors" href="#">Manifesto</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-text-main">Archive</span>
+                <a class="text-[10px] text-text-muted hover:text-primary transition-colors" href="#">G-MESH.COM</a>
+                <a class="text-[10px] text-text-muted hover:text-primary transition-colors" href="#">Essays</a>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-border/50 text-[10px] font-medium tracking-[0.2em] text-text-muted/50">
+        © 2026 G-MESH // OBSERVATIONAL LOG
+    </div>
 </footer>
-</body></html>
+
+</body>
+</html>

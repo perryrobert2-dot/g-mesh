@@ -1,0 +1,4 @@
+cd C:\g-mesh\g-mesh
+git add .
+git commit -m "Add daughter pages"
+git push
