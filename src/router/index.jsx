@@ -9,6 +9,7 @@ import Essays from '../pages/Essays'
 import Contact from '../pages/Contact'
 import Evolution from '../pages/Evolution'
 import Friction from '../pages/Friction'
+import The from '../pages/The'
 
 export const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -20,5 +21,6 @@ export const router = createBrowserRouter([
   { path: '/essays', element: <Essays /> },
   { path: '/contact', element: <Contact /> },
   { path: '/essays/evolution', element: <Evolution /> },
-  { path: '/friction', element: <Friction /> }
+  { path: '/friction', element: <Friction /> },
+  { path: '/the', element: <The /> }
 ])
